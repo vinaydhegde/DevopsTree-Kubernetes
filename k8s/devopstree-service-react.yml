@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: devopstree-react
+  labels:
+    service: devopstree-react
+  name: devopstree-react
+spec:
+  selector:
+    app: devopstree-react
+  ports:
+  - port: 8080
+    targetPort: 8080

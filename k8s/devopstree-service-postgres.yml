@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: devopstree-postgres
+  labels:
+    service: devopstree-postgres
+spec:
+  selector:
+    service: devopstree-postgres
+  type: ClusterIP
+  ports:
+  - port: 5432

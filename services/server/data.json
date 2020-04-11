@@ -1,0 +1,526 @@
+{
+    "name": "Devops",
+    "tooltip": "Devops tree",
+    "children": [
+      {
+        "name": "CI Framework",
+        "tooltip": "Continuous Integration (CI) is a development practice where developers integrate code into a shared repository frequently, preferably several times a day",
+        "children": [
+          {
+            "name": "Jenkins",
+            "tooltip": "Jenkins is a free and open source automation server. Jenkins helps to automate the non-human part of the software development process, with continuous integration and facilitating technical aspects of continuous delivery"
+          },
+          {
+            "name": "TeamCity",
+            "tooltip": "TeamCity is a build management and continuous integration server from JetBrains"
+          },
+          {
+            "name": "Bamboo",
+            "tooltip": "Bamboo is a continuous integration and continuous deployment server developed by Atlassian"
+          },
+          {
+            "name": "ElectricCommander",
+            "tooltip": "ElectricCommander automates and accelerates the application development (build-test-deploy) process and its supporting IT resources. It became the foundation for the orchestration platform called ElectricFlow"
+          }          
+        ]
+      },       
+
+      {
+        "name": "Server Config Management",
+        "tooltip": "Infrastructure as code (IAC): It should provide an automation Framework and should possess 'Idempotent' behavior", 
+        "children": [
+          {
+            "name": "Ansible",
+            "tooltip": "Ansible is an open-source software provisioning, configuration management, and application-deployment tool. It is acquired by Red Hat" 
+          },
+          {
+            "name": "Terraform",
+            "tooltip": "Terraform is an open-source infrastructure as code software tool created by HashiCorp"
+          },
+          {
+            "name": "Chef",
+            "tooltip": "Chef is a company and the name of a configuration management tool written in Ruby and Erlang"
+          },
+          {
+            "name": "Puppet",
+            "tooltip": "A commercially supported open source configuration management tool. Puppet IT automation software uses Puppet's declarative language to manage various stages of the IT infrastructure"
+          },
+          {
+            "name": "SaltStack",
+            "tooltip": "Salt is Python-based, open-source software for event-driven IT automation, remote task execution, and configuration management"
+          },
+          {
+            "name": "CFEngine",
+            "tooltip": "CFEngine is an open-source configuration management system, written by Mark Burgess"
+          }                           
+
+        ]
+      },
+
+      {
+        "name": "Container Engine",
+        "children": [
+          {
+            "name": "Docker",
+            "tooltip": "Docker is a set of platform as a service products that uses OS-level virtualization to deliver software in packages called containers"
+          },
+          {
+            "name": "Docker Compose",
+            "tooltip": "Docker Compose is a tool for defining and running 'multi-container' Docker applications"
+          },
+          {
+            "name": "Rkt",
+            "tooltip": "Rkt is an application container engine developed for modern production cloud-native environments"
+          },
+          {
+            "name": "LXC",
+            "tooltip": "LXC is an operating-system-level virtualization method for running multiple isolated Linux systems on a control host using a single Linux kernel"
+          }          
+        ]
+      },
+
+      {
+        "name": "Cluster Container Orchestration",
+        "children": [
+          {
+            "name": "Docker Swarm",
+            "tooltip": "Docker swarm is a container orchestration tool. It is a group of either physical or virtual machines that are running the Docker application and that have been configured to join together in a cluster"
+          },
+          {
+            "name": "Mesos",
+            "tooltip": "Apache Mesos is an open-source project to manage computer clusters"
+          },
+          {
+            "name": "Kubernetes",
+            "tooltip": "Kubernetes is an open-source container-orchestration system for automating application deployment, scaling, and management. It was originally designed by Google, and is now maintained by the Cloud Native Computing Foundation"
+          },
+          {
+            "name": "Rancher",
+            "tooltip": "Rancher, the open-source multi-cluster orchestration platform, lets operations teams deploy, manage and secure enterprise Kubernetes"            
+          },
+          {
+            "name": "Vagrant",
+            "tooltip": "Vagrant is an open-source software product for building and maintaining portable virtual software development environments, e.g. for VirtualBox, KVM, Hyper-V, Docker containers, VMware, and AWS"            
+          },
+          {
+            "name": "Helm",
+            "tooltip": "Helm helps you manage Kubernetes applications — Helm Charts help you define, install, and upgrade even the most complex Kubernetes application"            
+          },
+          {
+            "name": "Wercker",
+            "tooltip": "Wercker is a Docker-based continuous delivery platform that helps software developers build and deploy their applications and microservices"            
+          }          
+        ]
+      },
+
+      {
+        "name": "Version Control",
+        "children": [
+          {
+            "name": "Perforce",
+            "tooltip": "software used for application development, including version control software, web-based repository management, developer collaboration, application lifecycle management and Agile planning software"
+          },
+          {
+            "name": "SVN",
+            "tooltip": "Apache Subversion is a software versioning and revision control system"
+          },
+          {
+            "name": "Git",
+            "tooltip": "Git is a distributed version-control system for tracking changes in source code during software development"
+          },
+          {
+            "name": "Mercurial",
+            "tooltip": "Mercurial is a distributed revision-control tool for software developers"
+          }, 
+          {
+            "name": "Clearcase",
+            "tooltip": "Version control tool from IBM Rational"
+          }                  
+        ]
+      },
+      
+      {
+        "name": "Version Control -ALM",
+        "children": [
+          {
+            "name": "GitHub",
+            "tooltip": "It is a subsidiary of Microsoft. It offers the distributed version control and source code management functionality of Git, plus its own features"
+          },
+          {
+            "name": "GitLab",
+            "tooltip": "GitLab is a web-based DevOps lifecycle tool that provides a Git-repository manager providing wiki, issue-tracking and CI/CD pipeline features, using an open-source license, developed by GitLab Inc"
+          },
+          {
+            "name": "Bitbucket",
+            "tooltip": "Bitbucket is a web-based version control repository hosting service owned by Atlassian, for source code and development projects that use either Mercurial or Git revision control systems"
+          },
+          {
+            "name": "Azure Devops Server",
+            "tooltip": "Azure DevOps Server(Formerly, Team Foundation Server- TFS) is a Microsoft product that provides version control, reporting, requirements management, project management, automated builds, lab management, testing and release management capabilities"
+          }
+        ]
+      },
+      
+      {
+        "name": "Issue Tracking",
+        "children": [
+          {
+            "name": "JIRA",
+            "tooltip": "Jira is a proprietary issue tracking product developed by Atlassian that allows bug tracking and agile project management"
+          }
+        ]
+      },
+      
+      {
+        "name": "Repository Management",
+        "children": [
+          {
+            "name": "Artifactory",
+            "tooltip": "JFrog Artifactory is the only Universal Repository Manager supporting all major packaging formats, build tools and CI servers"
+          },
+          {
+            "name": "Nexus",
+            "tooltip": "Nexus is a repository manager. It allows you to proxy, collect, and manage your dependencies so that you are not constantly juggling a collection of JARs"
+          }          
+        ]
+      },
+      
+      {
+        "name": "Build Automation",
+        "children": [
+          {
+            "name": "Maven",
+            "tooltip": "Apache Maven is a build automation tool used primarily for Java projects"
+          },
+          {
+            "name": "Gradle",
+            "tooltip": "Gradle is an open-source build automation system that builds upon the concepts of Apache Ant and Apache Maven and introduces a Groovy-based domain-specific language instead of the XML form"
+          },
+          {
+            "name": "Ant",
+            "tooltip": "Apache Ant is a software tool for automating software build processes"
+          },
+          {
+            "name": "Grunt",
+            "tooltip": "Grunt is a JavaScript task runner, a tool used to automatically perform frequent tasks such as minification, compilation, unit testing, and linting"
+          }, 
+          {
+            "name": "Make",
+            "tooltip": "Make is a build automation tool that automatically builds executable programs and libraries from source code by reading files called Makefiles which specify how to derive the target program"
+          },
+          {
+            "name": "MSBuild",
+            "tooltip": "Microsoft Build Engine, is a free and open-source build tool set for managed code as well as native C++ code and was part of .NET Framework. Visual Studio depends on MSBuild, but not the vice versa"
+          }                            
+        ]
+      }, 
+
+      {
+        "name": "Cloud Compute Services",
+        "children": [
+          {
+            "name": "AWS",
+            "tooltip": "Amazon Web Services provides on-demand cloud computing platforms and APIs to individuals, companies, and governments, on a metered pay-as-you-go basis"
+          },
+          {
+            "name": "Microsoft Azure",
+            "tooltip": "Microsoft Azure is a cloud computing service created by Microsoft for building, testing, deploying, and managing applications and services through Microsoft-managed data centers"
+          },
+          {
+            "name": "OCI",
+            "tooltip": "Oracle Cloud Infrastructure is a cloud computing service offered by Oracle Corporation"
+          },
+          {
+            "name": "GoogleCloud",
+            "tooltip": "Google Cloud Platform, offered by Google, is a suite of cloud computing services that runs on the same infrastructure that Google uses internally for its end-user products, such as Google Search"
+          }
+        ]
+      },
+      
+      {
+        "name": "Kubernetes Cloud services",
+        "children": [
+          {
+            "name": "GKE",
+            "tooltip": "Google Kubernetes Engine (GKE) is a managed, production-ready environment for running containerized applications"
+          },
+          {
+            "name": "EKS",
+            "tooltip": "Elastic Kubernetes Service (EKS) is one of the managed container offerings that are available on AWS"
+          },
+          {
+            "name": "AKS",
+            "tooltip": "AKS is the Microsoft developed Kubernetes offering that runs on Azure Public Cloud, Government Cloud, and even Azure Stack for on-premises. It is deeply integrated with the rest of the Microsoft cloud services and has managed worker nodes (unlike EKS)"
+          }
+        ]
+      },
+      
+      {
+        "name": "Infra Monitoring",
+        "children": [
+          {
+            "name": "Nagios",
+            "tooltip": "Application that monitors systems, networks and infrastructure. Nagios offers monitoring and alerting services for servers, switches, applications and services"
+          },
+          {
+            "name": "Icinga",
+            "tooltip": "Icinga is an open-source computer system and network monitoring application. It was originally created as a fork of the Nagios system monitoring application"
+          },
+          {
+            "name": "Splunk",
+            "tooltip": "software for searching, monitoring, and analyzing machine-generated big data via a Web-style interface"
+          },
+          {
+            "name": "Ganglia",
+            "tooltip": "Ganglia is a scalable, distributed monitoring tool for high-performance computing systems, clusters and networks"
+          },
+          {
+            "name": "Snort",
+            "tooltip": "Snort is a free open source network intrusion detection system and intrusion prevention system. It is now developed by Cisco"
+          }                    
+        ]
+      },
+      
+      {
+        "name": "Logging",
+        "children": [
+          {
+            "name": "Logstash",
+            "tooltip": "Logstash is an open source, server-side data processing pipeline that ingests data from a multitude of sources simultaneously, transforms it, and then sends it to your favorite 'stash'"
+          },
+          {
+            "name": "Sumo Logic",
+            "tooltip": "Sumo Logic is the industry's leading, secure, cloud-based service for logs & metrics management for modern apps, providing real-time analytics and insights"
+          },
+          {
+            "name": "Scalyr",
+            "tooltip": "Scalyr, Inc. is a unified observability and log management platform designed for modern application development and deployment practices"
+          },
+          {
+            "name": "Graylog",
+            "tooltip": "Graylog is a leading centralized log management solution built to open standards for capturing, storing, and enabling real-time analysis of terabytes of machine data from any component in the IT infrastructure and applications"
+          }
+        ]
+      },
+      
+      {
+        "name": "Statistics",
+        "children": [
+          {
+            "name": "Collectl",
+            "tooltip": "collectl is a feature rich command-line utility that can be used to collect performance data that describes the current system status"
+          },
+          {
+            "name": "Collectd",
+            "tooltip": "collectd is a Unix daemon that collects, transfers and stores performance data of computers and network equipment"
+          }
+        ]
+      },
+      
+      {
+        "name": "Error monitoring & Reporting",
+        "children": [
+          {
+            "name": "Raygun",
+            "tooltip": "Raygun gives you visibility into how users are really experiencing your software. Detect, diagnose and resolve issues with greater speed and accuracy"
+          },
+          {
+            "name": "PagerDuty",
+            "tooltip": "Its platform is designed to alert clients to disruptions and outages through machine learning and automation"
+          },
+          {
+            "name": "Overops",
+            "tooltip": "OverOps is a continuous reliability solution that enables companies who create software to ensure rapid code changes do not impact customer experience"
+          }
+        ]
+      }, 
+      
+      {
+        "name": "Service Monitoring",
+        "children": [
+          {
+            "name": "Prometheus",
+            "tooltip": "Prometheus is a free software application used for event monitoring and alerting. It records real-time metrics in a time series database built using a HTTP pull model, with flexible queries and real-time alerting"
+          }
+        ]
+      },
+      
+      {
+        "name": "Service Discovery",
+        "children": [
+          {
+            "name": "Consul",
+            "tooltip": "Consul is a service networking solution by Hashicorp to connect and secure services across any runtime platform and public or private cloud"
+          }
+        ]
+      },
+      
+      {
+        "name": "Deploy Management",
+        "children": [
+          {
+            "name": "Juju",
+            "tooltip": "Juju is an open source, application and service modelling tool from Ubuntu that helps you deploy, manage and scale your applications on any cloud"
+          },
+          {
+            "name": "Capistrano",
+            "tooltip": "Capistrano is an open-source tool for running scripts on multiple servers; its main use is deploying web applications. It automates the process of making a new version of an application available on one or more web servers, including supporting tasks such as changing databases"
+          }
+        ]
+      }, 
+      
+      {
+        "name": "Process Management",
+        "children": [
+          {
+            "name": "Supervisord",
+            "tooltip": "Supervisor is a client/server system that allows its users to monitor and control a number of processes on UNIX-like operating systems"
+          },
+          {
+            "name": "Monit",
+            "tooltip": "Monit is a free, open-source process supervision tool for Unix and Linux"
+          }
+        ]
+      },
+
+      {
+        "name": "Web-Dev",
+        "children": [
+          {
+            "name": "Web Application framework-Server",
+            "children": [
+              {
+                "name": "Flask",
+                "tooltip": "A 'micro web framework' written in Python. It is classified as a microframework because it does not require particular tools or libraries. It has no database abstraction layer, form validation, or any other components where pre-existing third-party libraries provide common functions",
+                "children": [
+                  {
+                    "name": "Jinja",
+                    "tooltip": "Jinja is a web template engine for the Python programming language"
+                  },
+                  {
+                    "name": "Werkzeug ",
+                    "tooltip": "A WSGI utility library for Python that powers Flask"
+                  },
+                  {
+                    "name": "Gunicorn ",
+                    "tooltip": "The Gunicorn 'Green Unicorn' is a Python Web Server Gateway Interface HTTP server"
+                  }                  
+                ]  
+              },
+              {
+                "name": "Django",
+                "tooltip": "Django is a Python-based free and open-source web framework, which follows the model-template-view architectural pattern"
+              },
+              {
+                "name": "Ruby on Rails",
+                "tooltip": "RoR is a server-side web application framework written in Ruby"
+              },
+              {
+                "name": "Express.js",
+                "tooltip": "A web application framework for Node.js. It is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications"
+              }, 
+              {
+                "name": "Spring",
+                "tooltip": "The Spring Framework is an application framework and inversion of control container for the Java platform. The framework's core features can be used by any Java application, but there are extensions for building web applications on top of the Java EE platform"
+              }                            
+            ]
+          },
+
+          {
+            "name": "Web Application framework-Client",
+            "children": [
+              {
+                "name": "AngularJS",
+                "tooltip": "An open source 'client-side' web framework by Google"
+              },
+              {
+                "name": "React",
+                "tooltip": "A JavaScript library for building user interfaces. It is maintained by Facebook"
+              },
+              {
+                "name": "Vue.js",
+                "tooltip": "An open-source Model–view–viewmodel JavaScript framework for building user interfaces and single-page applications"
+              }
+            ]
+          },
+          {
+            "name": "Web Server",
+            "tooltip": "An HTTP server is a piece of software that understands URLs (web addresses) and HTTP (the protocol your browser uses to view webpages",
+            "children": [
+              {
+                "name": "Apache",
+                "tooltip": "Apache is the web server component of the popular LAMP (Linux, Apache, MySQL, PHP) stack, meant to serve static web-pages"
+              },
+              {
+                "name": "Tomcat",
+                "tooltip": "Apache Tomcat is an open-source implementation of the Java Servlet, JavaServer Pages, Java Expression Language and WebSocket technologies"
+              },
+              {
+                "name": "Nginx",
+                "tooltip": "It is a web server which can also be used as a reverse proxy, load balancer, mail proxy and HTTP cache"
+              },
+              {
+                "name": "Node.js",
+                "tooltip": "A 'JavaScript runtime' built on Chrome's V8 JavaScript engine. It is an open source 'server framework' that makes use of JavaScript on Server",
+                "children": [
+                  {
+                    "name": "NPM",
+                    "tooltip": "It is a package manager for the JavaScript programming language. It is the default package manager for the JavaScript runtime environment Node.js"
+                  }
+                ]  
+              }
+            ]
+          },
+          {
+            "name": "Reverse Proxy",
+            "tooltip": "Reverse proxy is a type of proxy server that retrieves resources on behalf of a client from one or more servers",
+            "children": [
+              {
+                "name": "Nginx",
+                "tooltip": "It is a web server which can also be used as a reverse proxy, load balancer, mail proxy and HTTP cache"
+              }
+            ]
+          },
+          {
+            "name": "Others",
+            "children": [
+              {
+                "name": "Kafka",
+                "tooltip": "Apache Kafka is an open-source stream-processing software platform developed by LinkedIn and donated to the Apache Software Foundation"
+              },
+              {
+                "name": "RabbitMQ",
+                "tooltip": "RabbitMQ is an open-source message-broker software that originally implemented the Advanced Message Queuing Protocol and has since been extended with a plug-in architecture to support Streaming Text Oriented Messaging Protocol, MQ Telemetry Transport, and other protocols"
+              }                    
+            ]
+          }
+        ]                      
+      },
+
+      {
+        "name": "Database Management",
+        "children": [
+          {
+            "name": "PostgreSQL",
+            "tooltip": "Postgres, is a free and open-source relational database management system"
+          },
+          {
+            "name": "MongoDB",
+            "tooltip": "MongoDB is a cross-platform document-oriented database program. Classified as a NoSQL database program, MongoDB uses JSON-like documents with schema"
+          },
+          {
+            "name": "Oracle database",
+            "tooltip": "Oracle Database is a multi-model database management system produced and marketed by Oracle Corporation"
+          },
+          {
+            "name": "Redis",
+            "tooltip": "Redis is an in-memory data structure project implementing a distributed, in-memory key-value database with optional durability"
+          }                    
+        ]
+      }
+           
+    ]  
+}              
+
+
+      

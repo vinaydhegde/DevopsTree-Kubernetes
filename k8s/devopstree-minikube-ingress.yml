@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: minikube-ingress
+  annotations:
+spec:
+  rules:
+  - host: devops-tree
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: devopstree-react
+          servicePort: 8080
+      - path: /devopstree
+        backend:
+          serviceName: devopstree-flask
+          servicePort: 5000
