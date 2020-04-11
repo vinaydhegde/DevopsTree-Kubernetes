@@ -1,5 +1,5 @@
 # DevopsTree Kubernetes
-Deploy and run 'DevopsTree' app in Kubernetes
+Deploy and Run 'DevopsTree' app in Kubernetes
 
 Dependencies:
 1. Docker Engine - CE: Client: v19.03.8, Server: v19.03.8
@@ -82,7 +82,8 @@ $ kubectl get pods
 $ kubectl exec devopstree-flask-<POD_IDENTIFIER> --stdin --tty -- python manage.py recreate_db
 $ kubectl exec devopstree-flask-<POD_IDENTIFIER> --stdin --tty -- python manage.py boostrap_db
 ```
-### Ingress
+### Ingress 
+(An API object in Kubernetes to expose HTTP/HTTPs routes)
 Enable and apply:
 ```sh
 $ minikube addons enable ingress
@@ -96,7 +97,7 @@ Add entry to /etc/hosts file:
 
 Try it out: http://devops-tree/devopstree
 
-### React
+### React (Client)
 Build and push the image to Docker Hub:
 ```sh
 $ docker build -t vinaydhegde/devopstree-react ./services/client -f ./services/client/Dockerfile-k8s
