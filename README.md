@@ -85,7 +85,8 @@ $ kubectl exec devopstree-flask-<POD_IDENTIFIER> --stdin --tty -- python manage.
 $ kubectl exec devopstree-flask-<POD_IDENTIFIER> --stdin --tty -- python manage.py boostrap_db
 ```
 ### Ingress 
-(An API object in Kubernetes to expose HTTP/HTTPs routes)
+(An API object in Kubernetes to expose HTTP/HTTPs routes).
+
 Enable and apply:
 ```sh
 $ minikube addons enable ingress
@@ -95,7 +96,7 @@ Add entry to /etc/hosts file:
 ```sh
 <MINIKUBE_IP> devops-tree
 ```
->Use the command *minikube ip* to get IP of the minikube cluster
+>Use the command *'minikube ip'* to get IP of the minikube cluster
 
 Try it out: http://devops-tree/devopstree
 
