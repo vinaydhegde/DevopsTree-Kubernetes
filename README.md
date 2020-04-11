@@ -1,102 +1,115 @@
-# DEVOPS-TREE-K8S
-Deploy and run 'devops-tree-K8s' app in Kubernetes
+# DevopsTree Kubernetes
+Deploy and run 'DevopsTree' app in Kubernetes
 
-## Docker
-Build the images and spin up the containers:
-```sh
-$ docker-compose up -d --build
-```
-Run the migrations and seed the database:
-```sh
-$ docker-compose exec server python manage.py recreate_db
-$ docker-compose exec server python manage.py seed_db
-```
-Test it out at:
-1. http://localhost:8080/
-1. http://localhost:5001/devops
+Dependencies:
+1. Docker Engine - CE: Client: v19.03.8, Server: v19.03.8
+1. Kubectl: vv1.18.0
+1. Minikube: v1.9.2
+1. Oracle VirtualBox: v6.1
 
-## Kubernetes
+Install all the above software on a physical machine or on a VM. 
+This is tested on Ubuntu which was installed on a Virtual Machine. i.e.
+1. Installed Ubuntu on a Windows physical host using Oracle Virtual Box.
+1. On the Ubuntu VM, installed all the above software ('Oracle Virtual Box' for minikube to create a Node, Kubectl & minikube)
+
+### Clone the software
+```sh
+$ git clone https://github.com/vinaydhegde/DevopsTree-Kubernetes ~/DevopsTree-Kubernetes
+```
+
 ### Minikube
 Start the cluster:
 ```sh
-$ minikube start --vm-driver=virtualbox
+$ cd ~/DevopsTree-Kubernetes
+$ minikube start --driver=docker
 $ minikube dashboard
 ```
-### Volume
-Create the volume:
-```sh
-$ kubectl apply -f ./k8s/persistent-volume.yml
-```
-Create the volume claim:
-```sh
-$ kubectl apply -f ./kubernetes/persistent-volume-claim.yml
-```
+>Note: Since I have VirtualBox installed on a VirtaulBox, I am am using '--driver=docker'. If your minikube is directly installed on a physical machine & if you are going to create a minikube node on a Oracle VirtualBox, then use '--driver=virtualbox'
+
 ### Secrets
 Create the secret object:
 ```sh
-$ kubectl apply -f ./k8s/secret.yml
+$ kubectl apply -f ./k8s/devopstree-secret.yml
 ```
-### Postgres
+
+### Volume
+Create the volume:
+```sh
+$ kubectl apply -f ./k8s/devopstree-pv.yml
+```
+
+### Create the volume claim:
+```sh
+$ kubectl apply -f ./k8s/devopstree-pvc.yml
+```
+### Postgres (DB)
 Create deployment:
 ```sh
-$ kubectl create -f ./k8s/postgres-deployment.yml
+$ kubectl create -f ./k8s/devopstree-deployment-postgres.yml
 ```
 Create the service:
 ```sh
-$ kubectl create -f ./k8s/postgres-service.yml
+$ kubectl create -f ./k8s/devopstree-service-postgres.yml
 ```
 Create the database:
 ```sh
 $ kubectl get pods
-$ kubectl exec postgres-<POD_IDENTIFIER> --stdin --tty -- createdb -U postgres devops
-```
-### Flask
+$ kubectl exec devopstree-postgres<POD_IDENTIFIER> --stdin --tty -- createdb -U devopstree-demo devopstree
+ ```
+>Here, 
+>*devopstree_demo*: is user name/login for the postgres DB 
+>*devopstree*: is the DB name
+
+### Flask (Server)
 Build and push the image to Docker Hub:
 ```sh
-$ docker build -t vinaydhegde/flask-kubernetes ./services/server
-$ docker push vinaydhegde/flask-kubernetes
+$ docker build -t vinaydhegde/devopstree-flask ./services/server
+$ docker push vinaydhegde/devopstree-flask
 ```
->Make sure to replace 'vinaydhegde' with your Docker Hub namespace in the above commands as well as in *k8s/flask-deployment.yml*
+>Make sure to replace 'vinaydhegde' with your Docker Hub namespace in the above commands as well as in *k8s/devopstree-deployment-flask.yml*
+
 Create the deployment:
 ```sh
-$ kubectl create -f ./k8s/flask-deployment.yml
+$ kubectl create -f ./k8s/devopstree-deployment-flask.yml
 ```
 Create the service:
 ```sh
-$ kubectl create -f ./k8s/flask-service.yml
+$ kubectl create -f ./k8s/devopstree-service-flask.yml
 ```
-Apply the migrations and seed the database:
+Apply the migrations and bootsrap the database with initial content:
 ```sh
 $ kubectl get pods
-$ kubectl exec flask-<POD_IDENTIFIER> --stdin --tty -- python manage.py recreate_db
-$ kubectl exec flask-<POD_IDENTIFIER> --stdin --tty -- python manage.py seed_db
+$ kubectl exec devopstree-flask-<POD_IDENTIFIER> --stdin --tty -- python manage.py recreate_db
+$ kubectl exec devopstree-flask-<POD_IDENTIFIER> --stdin --tty -- python manage.py boostrap_db
 ```
 ### Ingress
 Enable and apply:
 ```sh
 $ minikube addons enable ingress
-$ kubectl apply -f ./k8s/minikube-ingress.yml
+$ kubectl apply -f ./k8s/devopstree-minikube-ingress.yml
 ```
 Add entry to /etc/hosts file:
 ```sh
 <MINIKUBE_IP> devops-tree
 ```
-Try it out: http://devops-tree/devops
+>Use the command *minikube ip* to get IP of the minikube cluster
+
+Try it out: http://devops-tree/devopstree
 
 ### React
 Build and push the image to Docker Hub:
 ```sh
-$ docker build -t vinaydhegde/react-kubernetes ./services/client -f ./services/client/Dockerfile-minikube
-$ docker push vinaydhegde/react-kubernetes
+$ docker build -t vinaydhegde/devopstree-react ./services/client -f ./services/client/Dockerfile-k8s
+$ docker push vinaydhegde/devopstree-react
 ```
->Again, replace 'vinaydhegde' with your Docker Hub namespace in the above commands as well as in *k8s/react-deployment.yml*
+>Again, replace 'vinaydhegde' with your Docker Hub namespace in the above commands as well as in *k8s/devopstree-deployment-react.yml*
 Create the deployment:
 ```sh
-$ kubectl create -f ./k8s/react-deployment.yml
+$ kubectl create -f ./k8s/devopstree-deployment-react.yml
 ```
 Create the service:
 ```sh
-$ kubectl create -f ./k8s/react-service.yml
+$ kubectl create -f ./k8s/devopstree-service-react.yml
 ```
 Try it out at http://devops-tree
 
