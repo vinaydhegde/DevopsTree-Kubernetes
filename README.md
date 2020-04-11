@@ -1,6 +1,6 @@
 # Run a microservice in Kubernetes
-Deploy and Run *DevopsTree* app in Kubernetes
-'DevopsTree' is a Flask based Microservice (along with Postgres & React.js) developed for demoing Kuberenetes.
+Deploy and Run *DevopsTree* app in Kubernetes.
+*DevopsTree* is a Flask based Microservice (along with Postgres & React.js) developed for demoing Kuberenetes.
 
 
 Dependencies:
