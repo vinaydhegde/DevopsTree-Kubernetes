@@ -1,5 +1,7 @@
 # DevopsTree Kubernetes
-Deploy and Run 'DevopsTree' app in Kubernetes
+Deploy and Run *DevopsTree* app in Kubernetes
+It is a Flask based Microservice (along with Postgres & React.js) developed for demoing Kuberenetes.
+
 
 Dependencies:
 1. Docker Engine - CE: Client: v19.03.8, Server: v19.03.8
