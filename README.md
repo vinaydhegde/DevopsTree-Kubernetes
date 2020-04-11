@@ -5,7 +5,7 @@ Deploy and Run *DevopsTree* app in Kubernetes.
 
 Dependencies:
 1. Docker Engine - CE: Client: v19.03.8, Server: v19.03.8
-1. Kubectl: vv1.18.0
+1. Kubectl: v1.18.0
 1. Minikube: v1.9.2
 1. Oracle VirtualBox: v6.1
 
@@ -68,7 +68,7 @@ Build and push the image to Docker Hub:
 $ docker build -t vinaydhegde/devopstree-flask ./services/server
 $ docker push vinaydhegde/devopstree-flask
 ```
->Make sure to replace 'vinaydhegde' with your Docker Hub namespace in the above commands as well as in *k8s/devopstree-deployment-flask.yml*
+>Replace 'vinaydhegde' with your Docker Hub namespace in the above commands as well as in *k8s/devopstree-deployment-flask.yml*
 
 Create the deployment:
 ```sh
